@@ -1,0 +1,23 @@
+
+//Write a function to calculate the factorial of a number entered by the user. in dart
+
+
+import 'dart:io';
+
+int factorial(int num) {
+  if (num == 0 || num == 1) {
+    return 1;
+  }
+  return num * factorial(num - 1);
+}
+
+void main() {
+  stdout.write("Enter a number: ");
+  int number = int.parse(stdin.readLineSync()!);
+
+  if (number < 0) {
+    print("Factorial is not defined for negative numbers.");
+  } else {
+    print("Factorial of $number is: ${factorial(number)}");
+  }
+}
